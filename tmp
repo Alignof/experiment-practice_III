@@ -1,0 +1,10 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <wiringPi.h>
+#include <wiringPiSPI.h>
+
+
+#define SPICH 0
+#define SPISPEED 10000
+
