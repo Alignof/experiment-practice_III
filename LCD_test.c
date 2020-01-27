@@ -9,6 +9,7 @@
 #define LCDRS 0x0D
 #define LCD_BACKLIGHT 0x08
 #define EN 0x04
+#define RW 0x02
 #define RS 0x01
 //	{RS,RW,E,light}
 
@@ -67,20 +68,14 @@ void init(int fd){
 	delay(15);
 	
 	write_data(fd,0x03);
-	delay(1);
 	write_data(fd,0x03);
-	delay(1);
 	write_data(fd,0x03);
-	delay(1);
 	write_data(fd,0x02);
 	delay(1);
 
 	write_data(fd,LCD_FUNCTIONSET | LCD_2LINE | LCD_5x8DOTS | LCD_4BITMODE);
-	delay(1);
 	write_data(fd,LCD_DISPLAYCONTROL | LCD_DISPLAYON);
-	delay(1);
 	write_data(fd,LCD_CLEARDISPLAY);
-	delay(1);
 	write_data(fd,LCD_ENTRYMODESET | LCD_ENTRYLEFT);
 	delay(1);
 }
